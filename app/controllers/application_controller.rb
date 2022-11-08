@@ -47,5 +47,10 @@ class ApplicationController < Sinatra::Base
     review = Review.find(params[:id])
     review.to_json
   end
+  get '/movies/:id/reviews' do
+    moview_review=Movie.find(params[:id]).reviews
+    moview_review.to_json
+  end
+
 
 end
